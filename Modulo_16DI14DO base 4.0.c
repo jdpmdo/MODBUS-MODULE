@@ -1,11 +1,11 @@
 /*
 Modulo modbus rtu 16 entradas 14 salidas
 chip base 16f877a
-Jose Dario Prieto - Neuquen - Argentina
+JDP 
 Funciona con registros modbus RTU y puede ejecutar una logica de usuario personalizada independiente en la rutina EjecutaLogica()
 Timers definidas a tiempo base de contador 1 segundo
 Compila en CCS PCW 4.114
-/////////////////////////////////////////////Datos placa D16O14 planta alta
+/////////////////////////////////////////////Datos placa D16O14 planta alta - 16 ingresos - 14 salidas - 1 canal modbus 485
 ///////////////listado de ingresos digitales cableados
 
 
@@ -148,7 +148,7 @@ void main(void)
    SET_TRIS_D(0b00000000); // 0 salida
    SET_TRIS_C(0b10000000);
 
-   // Establecer el preescaler del Timer1 a 1:8 (para lograr una precisi�n de 1 �s)
+   // Establecer el preescaler del Timer1 a 1:8 (para lograr una precisiï¿½n de 1 ï¿½s)
 
    setup_timer_1(T1_INTERNAL | T1_DIV_BY_8);
 
@@ -160,7 +160,7 @@ void main(void)
    TimersIni();
    IO_ini();
 
-/////////////// juego de led para se�al de inicio
+/////////////// juego de led para señal de inicio
    int i = 0;
    for (i = 0; i <= 25; ++i)
    {
