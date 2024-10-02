@@ -1,4 +1,4 @@
-
+/// Funciones simples para implementar un timer
 
 struct timer___
 {
