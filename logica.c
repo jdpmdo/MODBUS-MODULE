@@ -2,9 +2,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define _SegTecla 4 // 5 seg
+#define _SegTecla 4 // 4 seg
 int8 C_I[_Max_I] = {};
 
+// funcion para deteccion de flanco
 int1 Teclas_pulsada(int8 id)
 {
    return (M_I[id] && !M_I1[id]);
@@ -37,13 +38,13 @@ void EjecutaLogica() ///////////////////////////////////////////////////////////
      if (TimerOn(0) )
      {
           M_O[0] = !M_O[0];
-          SetTimer(0, 3); // 10 seg// cada medio segundo
+          SetTimer(0, 3); // 3 seg// cada medio segundo
      }
 /*
 
    int i;
-   ///////////////////////////////////////////////////////proceso sala de stard
-   if (Teclas_pulsada(ID_I_SS1)) /// /////////////////sala de estar
+   ///////////////////////////////////////////////////////proceso control de luces sala 
+   if (Teclas_pulsada(ID_I_SS1)) /// /////////////////sala 
    {
       int8 estado = C_I[ID_I_SS1];
 
@@ -74,7 +75,7 @@ void EjecutaLogica() ///////////////////////////////////////////////////////////
       C_I[ID_I_SS1] = estado;
    }
 
-   /////////////////////////////proceso pieza nuestra
+   /////////////////////////////proceso pieza principal
 
    if (Teclas_pulsada(ID_I_PN1))
    {
@@ -121,7 +122,7 @@ void EjecutaLogica() ///////////////////////////////////////////////////////////
    if (Teclas_pulsada(ID_I_PAS))
       M_O[ID_O_L_PAS] = !M_O[ID_O_L_PAS];
 
-   ////////////////////////////////////////////////////pieza ROcio
+   ////////////////////////////////////////////////////pieza RO
 
    if (Teclas_pulsada(ID_I_PR))
       M_O[ID_O_L_PR] = !M_O[ID_O_L_PR];
@@ -141,7 +142,7 @@ void EjecutaLogica() ///////////////////////////////////////////////////////////
       M_O[ID_O_L_ES] = 0;
 
    ////////////////////////////////////////luz frente
-   /////////////////////////////proceso Bano pieza principal
+   /////////////////////////////proceso bano pieza principal
 
    if (Teclas_pulsada(ID_I_PN34)) /// /////////////////
    {
